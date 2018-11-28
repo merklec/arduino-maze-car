@@ -42,15 +42,15 @@ void loop() {
 	else {opt= 5;}  
 
 	switch (opt) {
-		case '0':
+		case 0:
 			Serial.print("FOWARD \n");
 		break;
-		case '1':
-      Serial.print("LEFT \n");
-    break;
-		case '2':
-		  Serial.print("RIGHT \n");
-    break;
+		case 1:
+		      Serial.print("LEFT \n");
+    		break;
+		case 2:
+			 Serial.print("RIGHT \n");
+    		break; 
 		default:
 			Serial.print("FUCK \n");
       Serial.print(pos[0]); Serial.print("\t");
