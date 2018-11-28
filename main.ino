@@ -34,7 +34,7 @@ void loop() {
 	int N0= 100; int N1= 50; int opt;
 	//variable decleration
 	
-	mvFWD(N0):
+	mvFWD(N0);
 	moana();
 	mvFWD(N0);
 	
