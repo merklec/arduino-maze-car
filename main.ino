@@ -13,7 +13,7 @@
 Servo head;
 //defining servo object for sensor head
 
-int pos[3];
+float pos[3];
 //defining global array for distance data storage
 
 void setup() {
@@ -36,13 +36,23 @@ void loop() {
 }
 
 void moana() {
-
+	
 
 }
 
-int sonicBOOM() {
+float sonicBOOM() {
+	long duration; float distance;
+	//variable decleration
 	
+	digitalWrite(A5, LOW); delayMicroseconds(2);
+	digitalWrite(A5, HIGH); delayMicrosconds(10);
+	digitalWrite(A5, LOW);
+	//creating sonic pulse
 
+	duration= pulseIn(A4, HIGH);
+	distance= (duration/2)/29.1;
+	
+	return distance;	
 }
 
 void mvFWD(int N0) {
