@@ -31,21 +31,15 @@ void setup() {
 }
 
 void loop() {
-	int N0= 80; int N1= 100; int opt;
+	int N0= 100; int N1= 160; int opt;
 	//variable decleration
 	
 	delay(250);
 
 	mvFWD(N0); delay(100);
-	moana();
+	opt= moana();
 	mvFWD(N0); delay(100);
 	
-	if(pos[1] > pos[0] & pos[1] > pos[2]) {opt= 1;}
-	else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
-	else if(pos[2] > pos[0] & pos[2] > pos[1]) {opt= 2;}
-	else {opt= 5;}  
-	//testing distance data
-
         Serial.print(pos[0]); Serial.print("\t");
         Serial.print(pos[1]); Serial.print("\t");
         Serial.print(pos[2]); Serial.print("\t");
@@ -69,7 +63,10 @@ void loop() {
 	//car movement
 }
 
-void moana() {
+int moana() {
+	int opt;
+	/variable decleration 
+
 	head.write(90); delay(250);
 	pos[1]= sonicBOOM(); delay(1000);
 	//recording foward distance
@@ -84,6 +81,14 @@ void moana() {
 
 	head.write(90);
 	//setting head foward
+
+	if(pos[1] > pos[0] & pos[1] > pos[2]) {opt= 1;}
+        else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
+        else if(pos[2] > pos[0] & pos[2] > pos[1]) {opt= 2;}
+        else {opt= 5;}
+        //testing distance data
+
+	return opt;
 }
 
 float sonicBOOM() {
@@ -131,7 +136,9 @@ void mvRGT(int N) {
         analogWrite(5, N); analogWrite(11, N);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
-        //motor pulse        
+        //motor pulse
+
+	delay(500);        
 }
 
 void mvLFT(int N) {
@@ -142,5 +149,7 @@ void mvLFT(int N) {
         analogWrite(5, N); analogWrite(11, N);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
-        //motor pulse        
+        //motor pulse
+
+	delay(100);        
 }
