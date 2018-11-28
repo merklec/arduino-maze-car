@@ -13,9 +13,6 @@
 Servo head;
 //defining servo object for sensor head
 
-float pos[3];
-//defining global array for distance data storage
-
 void setup() {
 	Serial.begin(9600);
 	//establishing serial communication
@@ -64,8 +61,8 @@ void loop() {
 }
 
 int moana() {
-	int opt;
-	/variable decleration 
+	int opt; float pos[3];
+	/variable and matrix decleration 
 
 	head.write(90); delay(250);
 	pos[1]= sonicBOOM(); delay(1000);
