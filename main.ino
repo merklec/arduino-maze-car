@@ -40,6 +40,13 @@ void loop() {
 	else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
 	else if(pos[2] > pos[0] & pos[2] > pos[1]) {opt= 2;}
 	else {opt= 5;}  
+	//testing distance data
+
+        Serial.print(pos[0]); Serial.print("\t");
+        Serial.print(pos[0]); Serial.print("\t");
+        Serial.print(pos[0]); Serial.print("\t");
+        delay(100);
+	//troubleshooting data display
 
 	switch (opt) {
 		case 0:
@@ -53,14 +60,8 @@ void loop() {
     		break; 
 		default:
 			Serial.print("FUCK \n");
-      Serial.print(pos[0]); Serial.print("\t");
-      Serial.print(pos[1]); Serial.print("\t");
-      Serial.print(pos[2]); Serial.print("\n");
-
-    delay(100);
 	}
-
-
+	//car movement
 }
 
 void moana() {
