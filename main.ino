@@ -33,8 +33,6 @@ void setup() {
 void loop() {
 	int N0= 100; int N1= 50; int opt;
 	//variable decleration
-
-	delay(2000);
 	
 	mvFWD(N0):
 	moana();
@@ -49,7 +47,6 @@ void loop() {
         Serial.print(pos[0]); Serial.print("\t");
         Serial.print(pos[1]); Serial.print("\t");
         Serial.print(pos[2]); Serial.print("\t");
-        delay(100);
 	//troubleshooting data display
 
 	switch (opt) {
@@ -68,6 +65,8 @@ void loop() {
 			Serial.print("FUCK \n");
 	}
 	//car movement
+
+	delay(250);
 }
 
 void moana() {
@@ -82,6 +81,9 @@ void moana() {
 	head.write(10); delay(250);
 	pos[2]= sonicBOOM(); delay(1000);	
 	//recording right distance
+
+	head.write(90);
+	//setting head foward
 }
 
 float sonicBOOM() {
