@@ -36,8 +36,17 @@ void loop() {
 }
 
 void moana() {
-	
+	head.write(90); delay(5);
+	pos[1]= sonicBOOM(); delay(5);
+	//recording foward distance
 
+	head.write(180); delay(5);
+	pos[0]= sonicBOOM(); delay(5);
+	//recordingleft distance
+
+	head.write(10); delay(5);
+	pos[2]= sonicBOOM(); delay(5);	
+	//recording right distance
 }
 
 float sonicBOOM() {
