@@ -37,11 +37,6 @@ void loop() {
 	opt= moana();
 	mvFWD(N0); delay(100);
 	
-        Serial.print(pos[0]); Serial.print("\t");
-        Serial.print(pos[1]); Serial.print("\t");
-        Serial.print(pos[2]); Serial.print("\t");
-	//troubleshooting data display
-
 	switch (opt) {
 		case 0:
 			Serial.print("LEFT \n");
