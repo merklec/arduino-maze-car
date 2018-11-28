@@ -31,12 +31,14 @@ void setup() {
 }
 
 void loop() {
-	int N0= 100; int N1= 50; int opt;
+	int N0= 80; int N1= 100; int opt;
 	//variable decleration
 	
-	mvFWD(N0);
+	delay(250);
+
+	mvFWD(N0); delay(100);
 	moana();
-	mvFWD(N0);
+	mvFWD(N0); delay(100);
 	
 	if(pos[1] > pos[0] & pos[1] > pos[2]) {opt= 1;}
 	else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
@@ -65,8 +67,6 @@ void loop() {
 			Serial.print("FUCK \n");
 	}
 	//car movement
-
-	delay(250);
 }
 
 void moana() {
