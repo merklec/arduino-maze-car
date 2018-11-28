@@ -28,7 +28,7 @@ void setup() {
 }
 
 void loop() {
-	int N0= 100; int N1= 160; int opt;
+	int N0= 110; int N1= 160; int opt;
 	//variable decleration
 	
 	delay(250);
@@ -126,7 +126,7 @@ void mvRGT(int N) {
         //setting motor rotations
 
         analogWrite(5, N); analogWrite(11, N);
-        delay(600);
+        delay(620);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
@@ -139,7 +139,7 @@ void mvLFT(int N) {
         //setting motor rotations
 
         analogWrite(5, N); analogWrite(11, N);
-        delay(600);
+        delay(620);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
