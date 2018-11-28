@@ -57,7 +57,7 @@ void loop() {
 
 int moana() {
 	int opt; float pos[3];
-	/variable and matrix decleration 
+	//variable and matrix decleration 
 
 	head.write(90); delay(250);
 	pos[1]= sonicBOOM(); delay(1000);
