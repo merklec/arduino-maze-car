@@ -131,7 +131,7 @@ void mvRGT(int N) {
         //setting motor rotations
 
         analogWrite(5, N); analogWrite(11, N);
-        delay(500);
+        delay(600);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
@@ -144,7 +144,7 @@ void mvLFT(int N) {
         //setting motor rotations
 
         analogWrite(5, N); analogWrite(11, N);
-        delay(500);
+        delay(600);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
