@@ -31,7 +31,30 @@ void setup() {
 }
 
 void loop() {
-	int N0= 100; int N1= 50;
+	int N0= 100; int N1= 50; int opt;
+	//variable decleration
+
+	moana();
+
+	if(pos[1] > pos[0] && pos[1] > pos[0]) {case= 1}
+	elseif(pos[0] > pos[1] && pos [0] > pos[2]) {case= 0}
+	elseif(pos[2] > pos[0] && pos[2] > pos[1]) {case= 2}
+	else {case= 5}  
+
+	switch (opt) {
+		case '0':
+			println(FOWARD);
+		break;
+		case '1':
+                        ptintln(LEFT);
+                break;
+		case '2':
+                        println(RIGHT);
+                break;
+		default:
+			println(FUCK);
+	}
+
 
 }
 
