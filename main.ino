@@ -6,7 +6,7 @@
 ***********************/
 
 #include<stdio.h>
-#include <servo.h>
+#include <Servo.h>
 #include <math.h>
 //including libraries
 
@@ -36,39 +36,44 @@ void loop() {
 
 	moana();
 
-	if(pos[1] > pos[0] && pos[1] > pos[0]) {case= 1}
-	elseif(pos[0] > pos[1] && pos [0] > pos[2]) {case= 0}
-	elseif(pos[2] > pos[0] && pos[2] > pos[1]) {case= 2}
-	else {case= 5}  
+	if(pos[1] > pos[0] & pos[1] > pos[0]) {opt= 1;}
+	else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
+	else if(pos[2] > pos[0] & pos[2] > pos[1]) {opt= 2;}
+	else {opt= 5;}  
 
 	switch (opt) {
 		case '0':
-			println(FOWARD);
+			Serial.print("FOWARD \n");
 		break;
 		case '1':
-                        ptintln(LEFT);
-                break;
+      Serial.print("LEFT \n");
+    break;
 		case '2':
-                        println(RIGHT);
-                break;
+		  Serial.print("RIGHT \n");
+    break;
 		default:
-			println(FUCK);
+			Serial.print("FUCK \n");
+      Serial.print(pos[0]); Serial.print("\t");
+      Serial.print(pos[1]); Serial.print("\t");
+      Serial.print(pos[2]); Serial.print("\n");
+
+    delay(100);
 	}
 
 
 }
 
 void moana() {
-	head.write(90); delay(5);
-	pos[1]= sonicBOOM(); delay(5);
+	head.write(90); delay(250);
+	pos[1]= sonicBOOM(); delay(1000);
 	//recording foward distance
 
-	head.write(180); delay(5);
-	pos[0]= sonicBOOM(); delay(5);
-	//recordingleft distance
+	head.write(165); delay(250);
+	pos[0]= sonicBOOM(); delay(1000);
+	//recording left distance
 
-	head.write(10); delay(5);
-	pos[2]= sonicBOOM(); delay(5);	
+	head.write(10); delay(250);
+	pos[2]= sonicBOOM(); delay(1000);	
 	//recording right distance
 }
 
@@ -77,7 +82,7 @@ float sonicBOOM() {
 	//variable decleration
 	
 	digitalWrite(A5, LOW); delayMicroseconds(2);
-	digitalWrite(A5, HIGH); delayMicrosconds(10);
+	digitalWrite(A5, HIGH); delayMicroseconds(10);
 	digitalWrite(A5, LOW);
 	//creating sonic pulse
 
@@ -92,7 +97,7 @@ void mvFWD(int N0) {
 	digitalWrite(8, LOW); digitalWrite(9, HIGH);
 	//setting motor rotations
 
-	analogWrite(5, N); analogWrite(11, N);
+	analogWrite(5, N0); analogWrite(11, N0);
 	delay(500);
 	digitalWrite(5, LOW); digitalWrite(11, LOW);
 	//motor pulse
@@ -103,7 +108,7 @@ void mvBWD(int N0) {
         digitalWrite(8, HIGH); digitalWrite(9, LOW);
         //setting motor rotations
 
-        analogWrite(5, N); analogWrite(11, N);
+        analogWrite(5, N0); analogWrite(11, N0);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse        
@@ -114,7 +119,7 @@ void mvRGT(int N1) {
         digitalWrite(8, LOW); digitalWrite(9, HIGH);
         //setting motor rotations
 
-        analogWrite(5, N); analogWrite(11, N);
+        analogWrite(5, N1); analogWrite(11, N1);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse        
@@ -125,7 +130,7 @@ void mvLFT(int N1) {
         digitalWrite(8, HIGH); digitalWrite(9, LOW);
         //setting motor rotations
 
-        analogWrite(5, N); analogWrite(11, N);
+        analogWrite(5, N1); analogWrite(11, N1);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse        
