@@ -36,7 +36,7 @@ void loop() {
 
 	moana();
 
-	if(pos[1] > pos[0] & pos[1] > pos[0]) {opt= 1;}
+	if(pos[1] > pos[0] & pos[1] > pos[2]) {opt= 1;}
 	else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
 	else if(pos[2] > pos[0] & pos[2] > pos[1]) {opt= 2;}
 	else {opt= 5;}  
@@ -50,10 +50,10 @@ void loop() {
 
 	switch (opt) {
 		case 0:
-			Serial.print("FOWARD \n");
+			Serial.print("LEFT \n");
 		break;
 		case 1:
-		      Serial.print("LEFT \n");
+		      Serial.print("FOWARD \n");
     		break;
 		case 2:
 			 Serial.print("RIGHT \n");
