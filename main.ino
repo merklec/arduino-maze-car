@@ -43,8 +43,8 @@ void loop() {
 	//testing distance data
 
         Serial.print(pos[0]); Serial.print("\t");
-        Serial.print(pos[0]); Serial.print("\t");
-        Serial.print(pos[0]); Serial.print("\t");
+        Serial.print(pos[1]); Serial.print("\t");
+        Serial.print(pos[2]); Serial.print("\t");
         delay(100);
 	//troubleshooting data display
 
