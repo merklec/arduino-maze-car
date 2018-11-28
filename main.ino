@@ -34,8 +34,12 @@ void loop() {
 	int N0= 100; int N1= 50; int opt;
 	//variable decleration
 
+	delay(2000);
+	
+	mvFWD(N0):
 	moana();
-
+	mvFWD(N0);
+	
 	if(pos[1] > pos[0] & pos[1] > pos[2]) {opt= 1;}
 	else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
 	else if(pos[2] > pos[0] & pos[2] > pos[1]) {opt= 2;}
@@ -51,12 +55,14 @@ void loop() {
 	switch (opt) {
 		case 0:
 			Serial.print("LEFT \n");
+			mvLFT(N1);
 		break;
 		case 1:
-		      Serial.print("FOWARD \n");
+			Serial.print("FOWARD \n");
     		break;
 		case 2:
-			 Serial.print("RIGHT \n");
+			Serial.print("RIGHT \n");
+			mvRGT(N1);
     		break; 
 		default:
 			Serial.print("FUCK \n");
@@ -93,45 +99,45 @@ float sonicBOOM() {
 	return distance;	
 }
 
-void mvFWD(int N0) {
+void mvFWD(int N) {
 	digitalWrite(6, HIGH); digitalWrite(7, LOW);
 	digitalWrite(8, LOW); digitalWrite(9, HIGH);
 	//setting motor rotations
 
-	analogWrite(5, N0); analogWrite(11, N0);
+	analogWrite(5, N); analogWrite(11, N);
 	delay(500);
 	digitalWrite(5, LOW); digitalWrite(11, LOW);
 	//motor pulse
 }
 
-void mvBWD(int N0) {
+void mvBWD(int N) {
         digitalWrite(6, LOW); digitalWrite(7, HIGH);
         digitalWrite(8, HIGH); digitalWrite(9, LOW);
         //setting motor rotations
 
-        analogWrite(5, N0); analogWrite(11, N0);
+        analogWrite(5, N); analogWrite(11, N);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse        
 }
 
-void mvRGT(int N1) {
+void mvRGT(int N) {
         digitalWrite(6, LOW); digitalWrite(7, HIGH);
         digitalWrite(8, LOW); digitalWrite(9, HIGH);
         //setting motor rotations
 
-        analogWrite(5, N1); analogWrite(11, N1);
+        analogWrite(5, N); analogWrite(11, N);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse        
 }
 
-void mvLFT(int N1) {
+void mvLFT(int N) {
         digitalWrite(6, HIGH); digitalWrite(7, LOW);
         digitalWrite(8, HIGH); digitalWrite(9, LOW);
         //setting motor rotations
 
-        analogWrite(5, N1); analogWrite(11, N1);
+        analogWrite(5, N); analogWrite(11, N);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse        
