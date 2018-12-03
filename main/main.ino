@@ -10,7 +10,7 @@
 #include <math.h>
 //including libraries
 
-int ctRGT= 0; int ctLFT= 0;
+int ctFWD= 0; int ctRGT= 0; int ctLFT= 0;
 //counter intialization
 
 Servo head;
@@ -36,22 +36,23 @@ void loop() {
 	int opt;
 	//variable decleration
 
-	mvFWD(N0, N1); delay(100); 
+	mvFWD(N0, N1);
 	opt= moana();
 	
 	switch (opt) {
 		case 0:
-			ctLFT ++; Serial.print("ctLFT: "); Serial.println(ctLFT);
+			ctLFT ++; Serial.print("\nctLFT: "); Serial.print(ctLFT);
 			if (ctLFT == 9) {mvLFT(N2, N3); delay(100); ctLFT= 0;}
-			else {delay(100);}
+			else {delay(10);}
 		break;
 		case 1:
+			ctLFT= 0; ctRGT= 0;
 			delay(100);
     		break;
 		case 2:
-			ctRGT ++; Serial.print("ctRGT: "); Serial.println(ctRGT);
+			ctRGT ++; Serial.print("\nctRGT: "); Serial.print(ctRGT);
 			if (ctRGT == 9) {mvRGT(N2, N3); delay(100); ctRGT= 0;}
-			else{delay(100);}
+			else{delay(10);}
     		break;
 		default:
 			Serial.print("FUCK \n");
@@ -63,16 +64,16 @@ int moana() {
 	int opt; float pos[3];
 	//variable and matrix decleration 
 
-	head.write(90); delay(250);
-	pos[1]= sonicBOOM(); delay(1000);
+	head.write(90); delay(500);
+	pos[1]= sonicBOOM(); delay(300);
 	//recording foward distance
 
-	head.write(165); delay(250);
-	pos[0]= sonicBOOM(); delay(1000);
+	head.write(165); delay(500);
+	pos[0]= sonicBOOM(); delay(300);
 	//recording left distance
 
-	head.write(10); delay(250);
-	pos[2]= sonicBOOM(); delay(1000);	
+	head.write(10); delay(500);
+	pos[2]= sonicBOOM(); delay(300);	
 	//recording right distance
 
 	head.write(90);
@@ -130,11 +131,11 @@ void mvRGT(int N0, int N1) {
         //setting motor rotations
 
         analogWrite(5, N0); analogWrite(11, N1);
-        Serial.println("\n\nRIGHT"); delay(696);
+        Serial.println("\n\nRIGHT"); delay(616);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
-	delay(500);
+	delay(100);
 }
 
 void mvLFT(int N0, int N1) {
