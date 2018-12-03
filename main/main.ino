@@ -103,8 +103,8 @@ void mvFWD(int N) {
 	digitalWrite(8, LOW); digitalWrite(9, HIGH);
 	//setting motor rotations
 
-	analogWrite(5, N); analogWrite(11, N);
-	delay(500);
+	analogWrite(5, 120); analogWrite(11, N);
+	delay(400);
 	digitalWrite(5, LOW); digitalWrite(11, LOW);
 	//motor pulse
 }
@@ -114,7 +114,7 @@ void mvBWD(int N) {
         digitalWrite(8, HIGH); digitalWrite(9, LOW);
         //setting motor rotations
 
-        analogWrite(5, N); analogWrite(11, N);
+        analogWrite(5, 120); analogWrite(11, N);
         delay(500);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse        
@@ -125,8 +125,8 @@ void mvRGT(int N) {
         digitalWrite(8, LOW); digitalWrite(9, HIGH);
         //setting motor rotations
 
-        analogWrite(5, N); analogWrite(11, N);
-        delay(620);
+        analogWrite(5, 145); analogWrite(11, N);
+        delay(480);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
@@ -138,8 +138,8 @@ void mvLFT(int N) {
         digitalWrite(8, HIGH); digitalWrite(9, LOW);
         //setting motor rotations
 
-        analogWrite(5, N); analogWrite(11, N);
-        delay(620);
+        analogWrite(5, 150); analogWrite(11, N);
+        delay(480);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
