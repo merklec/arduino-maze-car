@@ -42,7 +42,7 @@ void loop() {
 	switch (opt) {
 		case 0:
 			ctLFT ++; Serial.print("ctLFT= "); Serial.println(ctLFT);
-			if (ctLFT = 18) {mvLFT(N2, N3); delay(100); ctLFT= 0;}
+			if (ctLFT == 18) {mvLFT(N2, N3); delay(100); ctLFT= 0;}
 			else {delay(100);}
 			break;
 		case 1:
@@ -50,7 +50,7 @@ void loop() {
     		break;
 		case 2:
 			ctRGT ++; Serial.print("ctRGT= "); Serial.println(ctRGT);
-			if (ctRGT = 18) {mvRGT(N2, N3); delay(100); ctRGT= 0;}
+			if (ctRGT == 18) {mvRGT(N2, N3); delay(100); ctRGT= 0;}
 			else{delay(100);}
     		break;
 		default:
