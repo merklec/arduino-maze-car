@@ -41,17 +41,16 @@ void loop() {
 	
 	switch (opt) {
 		case 0:
-			ctLFT ++; Serial.print("LEFT "); Serial.println(ctLFT);
-			if (ctLFT > 18) {mvLFT(N2, N3); delay(100); ctLFT= 0;}
+			ctLFT ++; Serial.print("ctLFT= "); Serial.println(ctLFT);
+			if (ctLFT = 18) {mvLFT(N2, N3); delay(100); ctLFT= 0;}
 			else {delay(100);}
 			break;
 		case 1:
-			Serial.print("FOWARD \n");
 			delay(100);
     		break;
 		case 2:
-			ctRGT ++; Serial.print("RIGHT "); Serial.print(ctRGT);
-			if (ctLFT > 18) {mvRGT(N2, N3); delay(100); ctRGT= 0;}
+			ctRGT ++; Serial.print("ctRGT= "); Serial.println(ctRGT);
+			if (ctRGT = 18) {mvRGT(N2, N3); delay(100); ctRGT= 0;}
 			else{delay(100);}
     		break;
 		default:
@@ -109,7 +108,7 @@ void mvFWD(int N0, int N1) {
 	//setting motor rotations
 
 	analogWrite(5, N0); analogWrite(11, N1);
-	delay(50);
+	Serial.println("FOWARD"); delay(50);
 	digitalWrite(5, LOW); digitalWrite(11, LOW);
 	//motor pulse
 }
@@ -131,7 +130,7 @@ void mvRGT(int N0, int N1) {
         //setting motor rotations
 
         analogWrite(5, N0); analogWrite(11, N1);
-        delay(720);
+        Serial.println("RIGHT"); delay(720);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
@@ -144,7 +143,7 @@ void mvLFT(int N0, int N1) {
         //setting motor rotations
 
         analogWrite(5, N0); analogWrite(11, N1);
-        delay(720);
+        Serial.println("LEFT"); delay(720);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
