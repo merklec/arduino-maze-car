@@ -51,7 +51,7 @@ void loop() {
     		break;
 		case 2:
 			ctRGT ++; Serial.print("\nctRGT: "); Serial.print(ctRGT);
-			if (ctRGT == 9) {mvRGT(N2, N3); delay(100); ctRGT= 0;}
+			if (ctRGT == 8) {mvRGT(N2, N3); delay(100); ctRGT= 0;}
 			else{delay(10);}
     		break;
 		default:
@@ -131,7 +131,7 @@ void mvRGT(int N0, int N1) {
         //setting motor rotations
 
         analogWrite(5, N0); analogWrite(11, N1);
-        Serial.println("\n\nRIGHT"); delay(616);
+        Serial.println("\n\nRIGHT"); delay(626);
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
