@@ -79,10 +79,10 @@ int moana() {
 	//setting head foward
 
 	if(pos[1] > pos[0] & pos[1] > pos[2]) {opt= 1;}
-        else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
-        else if(pos[2] > pos[0] & pos[2] > pos[1]) {opt= 2;}
-        else {opt= 5;}
-        //testing distance data
+	else if(pos[0] > pos[1] & pos [0] > pos[2]) {opt= 0;}
+ 	else if(pos[2] > pos[0] & pos[2] > pos[1]) {opt= 2;}
+ 	else {opt= 5;}
+	//testing distance data
 
 	return opt;
 }
@@ -108,19 +108,19 @@ void mvFWD(int N0, int N1) {
 	//setting motor rotations
 
 	analogWrite(5, N0); analogWrite(11, N1);
-	Serial.print("\n\nFOWARD"); delay(100);
+	Serial.print("\n\nFOWARD"); delay(80);
 	digitalWrite(5, LOW); digitalWrite(11, LOW);
 	//motor pulse
 }
 
 void mvBWD(int N0, int N1) {
-        digitalWrite(6, LOW); digitalWrite(7, HIGH);
-        digitalWrite(8, HIGH); digitalWrite(9, LOW);
-        //setting motor rotations
+ 	digitalWrite(6, LOW); digitalWrite(7, HIGH);
+	digitalWrite(8, HIGH); digitalWrite(9, LOW);
+	//setting motor rotations
 
-        analogWrite(5, N0); analogWrite(11, N1);
-        delay(400);
-        digitalWrite(5, LOW); digitalWrite(11, LOW);
+	analogWrite(5, N0); analogWrite(11, N1);
+	delay(400);
+	digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse        
 }
 
@@ -134,7 +134,7 @@ void mvRGT(int N0, int N1) {
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
-	delay(500);        
+	delay(500);
 }
 
 void mvLFT(int N0, int N1) {
@@ -147,5 +147,5 @@ void mvLFT(int N0, int N1) {
         digitalWrite(5, LOW); digitalWrite(11, LOW);
         //motor pulse
 
-	delay(100);        
+	delay(100);
 }
